@@ -53,22 +53,22 @@ Based on instructions at MOSIP Github repository [https://github.com/mosip/mosip
     ``` 
 5. Make mosipuser owner of the cloned repo: 
     `sudo chown -R mosipuser ~/mosip-infra/`
-6: Install Ansible and create shortcuts: 
+6. Install Ansible and create shortcuts: 
     ```
     ./preinstall.sh 
     source ~/.bashrc
     ```
 ## Part 3: Replacement and editing of files 
-Updates several files that cause issues during installation. Sources for any borrowed solution will be linked. The order that these edits are implemented in doesn’t matter. 
+Update several files that cause issues during installation. Sources for any borrowed solution will be linked. The order that these edits are implemented in does not matter. 
 
 1. In `roles/packages/helm-cli/tasks/main.yml` replace 
-https://kubernetes-charts.storage.googleapis.com with 
-https://charts.helm.sh/stable (source: https://stackoverflow.com/questions/61954440/how-to-resolve-https-kubernetes-charts-storage-googleapis-com-is-not-a-valid/65404574#65404574)
+`https://kubernetes-charts.storage.googleapis.com` with 
+`https://charts.helm.sh/stable` (source: https://stackoverflow.com/questions/61954440/how-to-resolve-https-kubernetes-charts-storage-googleapis-com-is-not-a-valid/65404574#65404574)
 2. In `roles/k8scluster/kubernetes/node/meta/main.yml` and 
 `roles/k8scluster/kubernetes/master/meta/main.yml`, replace package names with `packagename-1.19.0`. For instance, `kubeadm` becomes `kubeadm-1.19.0`. (source: https://github.com/luker983/MOSIP-Setup-Instructions/tree/1.1.2) 
 3. In `roles/packages/psql/tasks/main.yml` replace 
-https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-7-x86_64/pgdg-re dhat-repo-latest.noarch.rpm with 
-https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redha t-repo-latest.noarch.rpm 
+`https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-7-x86_64/pgdg-re dhat-repo-latest.noarch.rpm ` with 
+`https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redha t-repo-latest.noarch.rpm`
 4. In `roles/packages/psycopg2/tasks/main.yml` specify version `2.8.6` for psycopg2-binary. So replace both instances of `psycopg2-binary` with `psycopg2-binary==2.8.6`. 
 5. If you are using a selfsigned certificate: open 
 `mosip-infra/deployment/sandbox-v2/group_vars/all.yml` and replace following values as shown below: 
