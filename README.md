@@ -106,10 +106,12 @@ ASSISTANCE==========================\n \n Traceback (most recent call last):\n F
 
 #### Fix: 
 First, update pip3 and rerun script:
-    ```
-    sudo pip3 install --upgrade pip 
+
+    
+    sudo pip3 install --upgrade pip
+
     an site.yml 
-    ```
+
 
 Another error should appear after the initial one: 
 ```
