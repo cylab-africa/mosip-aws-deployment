@@ -13,7 +13,7 @@
 ## Introduction
 This guide is based on instructions from the MOSIP github repository. When installed, it should consist of thirteen virtual machines of instance type `m5a.xlarge`. These are viewable from the EC2 console in the ap-south-1(Mumbai) region.
 ## Part 1: VM setup 
-Based on instructions at the [MOSIP Github page](https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2/terraform/aws/sandbox0 for the AWS Sandbox
+Based on instructions at the [MOSIP Github page](https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2/terraform/aws/sandbox) for the AWS Sandbox
 1. Clone repo from link above, use branch 1.1.2 
 2. Install [terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 3. Set up environment variables,using following commands:
