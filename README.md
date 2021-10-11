@@ -13,9 +13,9 @@
 ## Introduction
 This guide is based on instructions from the MOSIP github repository. When installed, it should consist of thirteen virtual machines of instance type `m5a.xlarge`. These are viewable from the EC2 console in the ap-south-1(Mumbai) region.
 ## Part 1: VM setup 
-Based on instructions at the MOSIP Github page [https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2/terraform/aws/sandbox] for the AWS Sandbox
+Based on instructions at the [MOSIP Github page](https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2/terraform/aws/sandbox0 for the AWS Sandbox
 1. Clone repo from link above, use branch 1.1.2 
-2. Install terraform [https://learn.hashicorp.com/tutorials/terraform/install-cli]
+2. Install [terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 3. Set up environment variables,using following commands:
     ```
     export AWS_ACCESS_KEY_ID=<> 
@@ -23,7 +23,7 @@ Based on instructions at the MOSIP Github page [https://github.com/mosip/mosip-i
     export TF_LOG=DEBUG 
     export TF_LOG_PATH=tf.log 
     ```
-To get an AWS_ACCESS_KEY follow instructions here [https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html]
+To get an AWS_ACCESS_KEY follow instructions [here](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
 
 4. On the AWS EC2 admin console generate a key pair called  `mosip-aws`. Download the private key `mosip-aws.pem` to your local `~/.ssh` folder. Make sure the permission of `~/.ssh/mosip-aws.pem` is set to `600` using `chmod`. If you wish to name the key something else, alter the key name in the `variables.tf` file 
 5. Generate a new set of RSA keys with default names `id_rsa` and `id_rsa.pub` and put them in the directory with the terraform scripts using following command: 
@@ -37,7 +37,7 @@ To get an AWS_ACCESS_KEY follow instructions here [https://docs.aws.amazon.com/p
 The setup requires at least 52 vCPUs (4 each for 13 machines). If this amount is above your limit submit a ticket for a limit increase of on-demand instances.
 
 ## Part 2: Installation setup of MOSIP 
-Based on instructions at MOSIP Github repository [https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2]
+Based on instructions at [MOSIP Github repository](https://github.com/mosip/mosip-infra/tree/1.1.2/deployment/sandbox-v2)
 1. Once initialized, log into console.sb using command 
 `ssh -i ~/.ssh/mosip-aws.pem centos@<PUBLIC_IP>` Public IP is shown in as public IPv4 on EC2 Dashboard 
 2. Change to mosipuser: 
